@@ -1,0 +1,16 @@
+apply plugin: 'maven'
+
+uploadArchives{
+    repositories{
+        mavenDeployer {
+            //maven 本地文件地址
+            def mavenLib = file(getProperty('mavenPath'))
+            repository(url: "file://maven/")
+            pom.project {
+                version 1.0
+                groupId GROUDID
+                artifactId ARTIFACTID
+            }
+        }
+    }
+}
